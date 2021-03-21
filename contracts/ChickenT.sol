@@ -74,7 +74,7 @@ contract ChickenT is ERC721 {
         poulet memory animala = collection[Ida];
         poulet memory animalb = collection[Idb];
         uint256 NID = add_animal(animala.plumage,animalb.bec,animala.yeux,animalb.griffe);
-        return true ;
+        return true;
 
     }
 
@@ -107,6 +107,7 @@ contract ChickenT is ERC721 {
     }
 
     function proposeToFight(uint Id) public payable {
+        require(bank != address(0), "No bank defined");
         require(ownerOf(Id) == msg.sender, "Your not the owner of this chicken!");
         require(wantToFight[Id].value == 0, "This animal is already registered to fight! Stop SPAM the blockchain pls!");
         wantToFight[Id].value = msg.value;
@@ -117,6 +118,7 @@ contract ChickenT is ERC721 {
     }
 
     function agreeToFight(uint IdWantToFightList, uint IdChallenger) public payable {
+        require(bank != address(0), "No bank defined");
         require(wantToFight[IdWantToFightList].value != 0, "This chicken isn't on the challengers' list");
         require(ownerOf(IdChallenger) == msg.sender, "Your not the owner of this chicken!");
         require(wantToFight[IdWantToFightList].value >= msg.value - 20000 && wantToFight[IdWantToFightList].value <= msg.value + 20000, "You have to bet around the same amount as your opponent");
