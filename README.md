@@ -11,5 +11,5 @@ Une fois whitelisté, l'adresse pourra être utilisé pour ajouter des animaux m
 
 Un utilisateur pourra également lancer une enchère pour un de ses animaux. les autres utilisateurs auront alors 48h pour enchérir. Après 48h, l'utilisateur ayant gagné l'enchère pourra claim son nouvel animal (La gestion de la vente niveau solde en ether n'a pas pu être implémenté)
 
-Pour proposer un combat, appeler  proposeToFight(). Pour accepter un combat parmis ceux proposer appeler agreeToFight(). Avant d'accepter ou de proposer un combat, vous devez enregistrer une adresse (avec l'adresse founder) pour la banque chargé de récupérer et redistribuer l'argent des paris.
+Pour proposer un combat, appeler proposeToFight(). Pour accepter un combat parmis ceux proposés appeler agreeToFight(). Avant d'accepter ou de proposer un combat, vous devez enregistrer une adresse (avec l'adresse founder) pour la banque chargé de récupérer et redistribuer l'argent des paris.
 La redistribution de l'argent n'a pas put être implémenté.
